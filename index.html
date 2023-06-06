@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tarjeta de crédito válida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="wrapper-context">
+        <div class="tittle">
+          <h1 class="h1-tittle">Amigos de los Mininos</h1>
+          <p class="p-context">
+            Somos una organización privada sin ánimo de lucro dedicada a la
+            protección y adopción de gatitos, gracias a tus aportes podemos
+            brindarles todos los cuidados que los mininos necesitan mientras les
+            buscamos un hogar definitivo
+          </p>
+        </div>
+      </div>
+
+      <div class="wrapper-type1">
+        <h2>Tipo de donación</h2>
+        <input
+          type="radio"
+          name="donation-kind"
+          id="monthly-donation"
+          value="monthly"
+        />
+        Mensual<br />
+
+        <input
+          type="radio"
+          name="donation-kind"
+          id="once-donation"
+          value="once"
+        />
+        Una vez<br />
+      </div>
+
+      <div class="wrapper-type1">
+        <h2>Selecciona el monto</h2>
+        <input type="radio" name="donation-amount" id="donate5" value="5" />
+        5$<br />
+
+        <input type="radio" name="donation-amount" id="donate10" value="10" />
+        10$<br />
+
+        <input type="radio" name="donation-amount" id="donate20" value="20" />
+        20$<br />
+
+        <input
+          type="radio"
+          name="donation-amount"
+          id="donate-diff-amount"
+          value="diff-amount"
+        />
+        Otra cantidad<br />
+      </div>
+
+      <div class="wrapper-type2">
+        <h2>Datos de facturación</h2>
+        <form class="form" id="form">
+          <div class="form-group">
+            <label for="input-name" class="label">Cardholder Name</label>
+            <input
+              type="text"
+              name=""
+              class="input"
+              id="input-name"
+              placeholder="e.g. Alba Giraldo"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="input-number" class="label">Card Number</label>
+            <input
+              type="text"
+              name=""
+              class="input"
+              id="input-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+          </div>
+
+          <div class="form-group double">
+            <div class="rows">
+              <label for="input-month" class="label">Exp Date (MM/YY)</label>
+              <div class="columns">
+                <input
+                  type="text"
+                  name=""
+                  class="input"
+                  id="input-month"
+                  placeholder="MM"
+                />
+                <input
+                  type="text"
+                  name=""
+                  class="input"
+                  id="input-year"
+                  placeholder="YY"
+                />
+              </div>
+            </div>
+            <div class="ro">
+              <label for="input-cvc" class="label">cvc</label>
+              <input
+                type="text"
+                name=""
+                class="input"
+                id="input-cvc"
+                placeholder="eg 000"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="wrapper-credit-card">
+        <div class="card2">
+          <div class="upper"></div>
+          <div class="numSpaces">
+            <form class="formNum">
+              <input
+                type="text"
+                placeholder="1234"
+                maxlength="4"
+                class="digits"
+                id="set1"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                placeholder="1234"
+                class="digits"
+                id="set2"
+                maxlength="4"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                placeholder="1234"
+                class="digits"
+                id="set3"
+                maxlength="4"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                placeholder="1234"
+                class="digits"
+                id="set4"
+                maxlength="4"
+              />
+            </form>
+          </div>
+        </div>
+        <div class="containerButton">
+          <button class="button-verify">Verificar</button>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
