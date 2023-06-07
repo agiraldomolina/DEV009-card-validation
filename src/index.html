@@ -9,18 +9,16 @@
     <header></header>
     <main>
       <div class="wrapper-context">
-        <div class="tittle">
-          <h1 class="h1-tittle">Amigos de los Mininos</h1>
-          <p class="p-context">
-            Somos una organización privada sin ánimo de lucro dedicada a la
-            protección y adopción de gatitos, gracias a tus aportes podemos
-            brindarles todos los cuidados que los mininos necesitan mientras les
-            buscamos un hogar definitivo
-          </p>
-        </div>
+        <h1 class="wrapper-context__tittle">Amigos de los Mininos</h1>
+        <p class="wrapper-context__p">
+          Somos una organización privada sin ánimo de lucro dedicada a la
+          protección y adopción de gatitos, gracias a tus aportes podemos
+          brindarles todos los cuidados que los mininos necesitan mientras les
+          buscamos un hogar definitivo
+        </p>
       </div>
 
-      <div class="wrapper-type1">
+      <div class="wrapper-options">
         <h2>Tipo de donación</h2>
         <input
           type="radio"
@@ -36,10 +34,8 @@
           id="once-donation"
           value="once"
         />
-        Una vez<br />
-      </div>
+        Una vez<br /><br />
 
-      <div class="wrapper-type1">
         <h2>Selecciona el monto</h2>
         <input type="radio" name="donation-amount" id="donate5" value="5" />
         5$<br />
@@ -59,7 +55,8 @@
         Otra cantidad<br />
       </div>
 
-      <div class="wrapper-type2">
+      <!--
+        <div class="wrapper-type2">
         <h2>Datos de facturación</h2>
         <form class="form" id="form">
           <div class="form-group">
@@ -117,12 +114,13 @@
           </div>
         </form>
       </div>
+      -->
 
       <div class="wrapper-credit-card">
         <div class="card2">
-          <div class="upper"></div>
-          <div class="numSpaces">
-            <form class="formNum">
+          <div class="wrapper-credit-card__logo"></div>
+          <div class="wrapper-credit-card__numSpaces">
+            <form class="wrapper-credit-card__formNum">
               <input
                 type="text"
                 placeholder="1234"
