@@ -5,6 +5,7 @@ const set2 = document.querySelector("#input-set2");
 const set3 = document.querySelector("#input-set3");
 const set4 = document.querySelector("#input-set4");
 
+const name = document.querySelector("#input-name");
 const month = document.querySelector("#input-month");
 const year = document.querySelector("#input-year");
 const CCV = document.querySelector("#input-cvc");
@@ -89,17 +90,24 @@ set4.addEventListener("keypress", function (e) {
 month.addEventListener("keypress", function (e) {
   if (onlyDigits(e) === false) {
     e.preventDefault();
+  } else {
+    console.log(month.value);
   }
   if (month.value.length === 2) {
-    if (+month.value > 0 && +month.value < 13) {
-      monthOk = true;
-      year.focus();
-    } else {
-      monthOk = false;
-      alert(`${month.value} no es un número de mes válido`);
-      month.value = "";
-      month.focus();
-    }
+    year.focus();
+  }
+});
+
+year.addEventListener("focus", function () {
+  console.log(month.value);
+  if (+month.value > 0 && +month.value < 13) {
+    monthOk = true;
+    //year.focus();
+  } else {
+    monthOk = false;
+    alert(`${month.value} no es un número de mes válido`);
+    month.value = "";
+    month.focus();
   }
 });
 
@@ -108,15 +116,19 @@ year.addEventListener("keypress", function (e) {
     e.preventDefault();
   }
   if (year.value.length === 2) {
-    if (+year.value > 22 && +year.value < 28) {
-      yearOk = true;
-      CCV.focus();
-    } else {
-      yearOk = false;
-      alert(`${year.value} no es un número de añ0 válido`);
-      year.value = "";
-      year.focus();
-    }
+    CCV.focus();
+  }
+});
+
+CCV.addEventListener("focus", function () {
+  if (+year.value > 22 && +year.value < 28) {
+    yearOk = true;
+    //CCV.focus();
+  } else {
+    yearOk = false;
+    alert(`${year.value} no es un número de añ0 válido`);
+    year.value = "";
+    year.focus();
   }
 });
 
@@ -124,47 +136,22 @@ CCV.addEventListener("keypress", function (e) {
   if (onlyDigits(e) === false) {
     e.preventDefault();
   }
-  if (CCV.value.length === 3) {
-    if (+CCV.value > 0 && +CCV.value < 1000) {
-      ccvOk = true;
-      buttonVerify.focus();
-    } else {
-      ccvOk = false;
-      alert(`${CCV} no es un código de seguridad válido`);
-      CCV.value = "";
-      CCV.focus();
-    }
-  }
+  // if (CCV.value.length === 3) {
+  //   if (+CCV.value > 0 && +CCV.value < 1000) {
+  //     ccvOk = true;
+  //     buttonVerify.focus();
+  //   } else {
+  //     ccvOk = false;
+  //     alert(`${CCV} no es un código de seguridad válido`);
+  //     CCV.value = "";
+  //     CCV.focus();
+  //   }
+  // }
 });
 
 buttonVerify.addEventListener("click", function () {
-  alert(
-    `🐱😻 Muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
-  );
-
-  // if (+month.value > 0 && +month.value < 13) {
-  //   monthOk = true;
-  // } else {
-  //   monthOk = false;
-  //   alert(`${month.value} no es un número de mes válido`);
-  //   month.value = "";
-  //   month.focus();
-  // }
-
-  // if (+year.value > 22 && +year.value < 28) {
-  //   year = true;
-  // } else {
-  //   year = false;
-  //   alert(`${year.value} no es un número de añ0 válido`);
-  //   year.value = "";
-  //   year.focus();
-  // }
-
-  // +year.value > 22 && +year.value < 28 ? (yearOk = true) : (yearOk = false);
-
-  // +CCV.value > 0 && +CCV.value < 1000 ? (ccvOk = true) : (ccvOk = false);
-
   //read digits from inputs
+
   const digitsSet1 = set1.value;
   const digitsSet2 = set2.value;
   const digitsSet3 = set3.value;
@@ -183,6 +170,13 @@ buttonVerify.addEventListener("click", function () {
   set2.value = masky.substring(4, 8);
   set3.value = masky.substring(8, 12);
   set4.value = masky.substring(12);
+
+  if (creditCardValid) {
+    let donorName = name.value;
+    alert(
+      `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
+    );
+  }
 });
 
 const numTest2 = "3625102593804";
