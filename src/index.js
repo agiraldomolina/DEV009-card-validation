@@ -1,5 +1,7 @@
 import validator from "./validator.js";
 
+// declaring variables for elements
+
 const set1 = document.querySelector("#input-set1");
 const set2 = document.querySelector("#input-set2");
 const set3 = document.querySelector("#input-set3");
@@ -18,13 +20,14 @@ const donate10 = document.querySelector("#donate10");
 const donate20 = document.querySelector("#donate20");
 const donateDiffAmunt = document.querySelector("#donate-diff-amount");
 
-//const buttonConfirm = document.querySelector("button-confirm");
 const buttonVerify = document.querySelector(".button-verify");
 
+//declaring variables
 let donationKind = "";
 let amountDonated = 0;
 let msg = "";
 
+//Reading the find of donation
 monthlyDonation.addEventListener("click", function () {
   donationKind = "mensual";
 });
@@ -32,6 +35,7 @@ onceDonation.addEventListener("click", function () {
   donationKind = "una vez";
 });
 
+//Reading donation amount
 donate5.addEventListener("click", function () {
   amountDonated = 5;
   console.log(`cantidad donada: ${amountDonated}`);
@@ -40,27 +44,29 @@ donate10.addEventListener("click", function () {
   amountDonated = 10;
   console.log(`cantidad donada: ${amountDonated}`);
 });
-
 donate20.addEventListener("click", function () {
   amountDonated = 20;
   console.log(`cantidad donada: ${amountDonated}`);
 });
-
 donateDiffAmunt.addEventListener("click", function () {
   amountDonated = prompt("Ingrese la cantidad que quiere donar");
   console.log(`cantidad donada: ${amountDonated}`);
 });
 
+// function that verify that user press only digits
 function onlyDigits(e) {
   const char = e.which || e.keycode;
   if (char >= 48 && char <= 57) return true;
   else return false;
 }
 
+//every time user press a key inside digits inputs
 set1.addEventListener("keypress", function (e) {
+  //thansk to onlyDigits function only digits are received
   if (onlyDigits(e) === false) {
     e.preventDefault();
   }
+  //when digits are complete cursor moves to the next digits set
   if (set1.value.length === 4) set2.focus();
 });
 
@@ -85,17 +91,20 @@ set4.addEventListener("keypress", function (e) {
   if (set4.value.length === 4) month.focus();
 });
 
+//thanks to onlyDigits function only digits are received
 month.addEventListener("keypress", function (e) {
   if (onlyDigits(e) === false) {
     e.preventDefault();
   } else {
     console.log(month.value);
   }
+  //when month digits are complete cursor moves to the next filed
   if (month.value.length === 2) {
     year.focus();
   }
 });
 
+//Verifyin values for month, year and CCV
 year.addEventListener("focus", function () {
   console.log(month.value);
   if (+month.value === 0 || +month.value > 12) {
@@ -136,62 +145,57 @@ buttonVerify.addEventListener("click", function () {
   const digitsSet3 = set3.value;
   const digitsSet4 = set4.value;
 
+  //Verifying all digits are complete
   if (
     +digitsSet1.length < 4 ||
     +digitsSet2.length < 4 ||
     +digitsSet3.length < 4 ||
     +digitsSet4.length < 4
   ) {
+    //if digits are incomplete user is alerted y can'n continue
     alert(
       "Por favor introduzca correctamente todos los dígitos de su tarjeta de crédito 😿"
     );
     set1.focus();
-  } else {
+  }
+  // if digits are complete...
+  else {
     // Cancatenating the sets
     const strCardNumber = `${digitsSet1}${digitsSet2}${digitsSet3}${digitsSet4}`;
     console.log(strCardNumber);
 
+    // calling method isValid
     const creditCardValid = validator.isValid(strCardNumber);
-    // const msg = creditCardValid ? "valido" : "invalido";
-    // alert(`Numero de tarjeta ${msg}`);
 
+    // if credit card is a valid number:
     if (creditCardValid) {
+      //create a string that will be used in a later message
       msg = "válido";
+      //calling maskify method
       const masky = validator.maskify(strCardNumber);
+      //masking digits in the onterfaz
       set1.value = masky.substring(0, 4);
       set2.value = masky.substring(4, 8);
       set3.value = masky.substring(8, 12);
       set4.value = masky.substring(12);
+      // declating variable with the donor name
       const donorName = name.value;
+      //display a gratitude message
       alert(
         `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
       );
+      // if credit card is not a  valid number:
     } else {
+      //create a string that will be used in a later message
       msg = "no válido";
+      //clear inputs
       set1.value = "";
       set2.value = "";
       set3.value = "";
       set4.value = "";
     }
-
     alert(`Numero de tarjeta ${msg}`);
-
-    // const masky = validator.maskify(strCardNumber);
-    // set1.value = masky.substring(0, 4);
-    // set2.value = masky.substring(4, 8);
-    // set3.value = masky.substring(8, 12);
-    // set4.value = masky.substring(12);
-
-    // if (creditCardValid) {
-    //   const donorName = name.value;
-    //   alert(
-    //     `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
-    //   );
-    // }
   }
 });
-
-// const numTest2 = "3625102593804";
-// console.log(validator.isValid(numTest2));
 
 console.log(validator);
