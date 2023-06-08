@@ -14,9 +14,15 @@
   --clr-dark-violet: hsl(278, 68%, 11%);
 }
 
+body {
+  background-color: #c99e10;
+}
+
 main {
   margin: 20px;
+  background-color: #c99e10;
   /*border: 1px solid red;*/
+  color: #1e434c;
 }
 
 .wrapper-context {
@@ -34,6 +40,10 @@ label {
   align-content: center;
 }
 
+h1 {
+  color: #1e434c;
+}
+
 .wrapper-context__tittle {
   padding: 1rem;
   font-size: 3rem;
@@ -48,11 +58,6 @@ label {
   /*border: 1px solid orange;*/
   margin: 1rem;
 }
-
-.wrapper-credit-card {
-  /*border: 1px solid green;*/
-}
-
 .card2 {
   display: grid;
   width: 600px;
@@ -115,6 +120,16 @@ label {
   text-align: right;
   font-size: 0.8rem;
 }
+#input-name,
+#input-month,
+#input-year,
+#input-cvc,
+#input-set1,
+#input-set2,
+#input-set3,
+#input-set4 {
+  background-color: #c99e10;
+}
 
 #month {
   text-align: right;
@@ -159,12 +174,14 @@ label {
 }
 
 .button-verify {
-  background-color: var(--clr-dark-violet);
-  color: var(--clr-white);
-  font-size: 1rem;
+  background-color: #1e434c;
+  color: #fff;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
   padding-block: 0.75rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  margin-bottom: 50px;
 }
 
 .numGridMask {
