@@ -23,9 +23,6 @@ const buttonVerify = document.querySelector(".button-verify");
 
 let donationKind = "";
 let amountDonated = 0;
-let monthOk = false;
-let yearOk = false;
-let ccvOk = false;
 
 monthlyDonation.addEventListener("click", function () {
   donationKind = "mensual";
@@ -100,11 +97,7 @@ month.addEventListener("keypress", function (e) {
 
 year.addEventListener("focus", function () {
   console.log(month.value);
-  if (+month.value > 0 && +month.value < 13) {
-    monthOk = true;
-    //year.focus();
-  } else {
-    monthOk = false;
+  if (+month.value === 0 || +month.value > 12) {
     alert(`${month.value} no es un número de mes válido`);
     month.value = "";
     month.focus();
@@ -121,11 +114,7 @@ year.addEventListener("keypress", function (e) {
 });
 
 CCV.addEventListener("focus", function () {
-  if (+year.value > 22 && +year.value < 28) {
-    yearOk = true;
-    //CCV.focus();
-  } else {
-    yearOk = false;
+  if (!(+year.value > 22 && +year.value < 28)) {
     alert(`${year.value} no es un número de añ0 válido`);
     year.value = "";
     year.focus();
@@ -136,17 +125,6 @@ CCV.addEventListener("keypress", function (e) {
   if (onlyDigits(e) === false) {
     e.preventDefault();
   }
-  // if (CCV.value.length === 3) {
-  //   if (+CCV.value > 0 && +CCV.value < 1000) {
-  //     ccvOk = true;
-  //     buttonVerify.focus();
-  //   } else {
-  //     ccvOk = false;
-  //     alert(`${CCV} no es un código de seguridad válido`);
-  //     CCV.value = "";
-  //     CCV.focus();
-  //   }
-  // }
 });
 
 buttonVerify.addEventListener("click", function () {
@@ -182,7 +160,7 @@ buttonVerify.addEventListener("click", function () {
     set4.value = masky.substring(12);
 
     if (creditCardValid) {
-      let donorName = name.value;
+      const donorName = name.value;
       alert(
         `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
       );
