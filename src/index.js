@@ -23,6 +23,7 @@ const buttonVerify = document.querySelector(".button-verify");
 
 let donationKind = "";
 let amountDonated = 0;
+let msg = "";
 
 monthlyDonation.addEventListener("click", function () {
   donationKind = "mensual";
@@ -134,14 +135,15 @@ buttonVerify.addEventListener("click", function () {
   const digitsSet2 = set2.value;
   const digitsSet3 = set3.value;
   const digitsSet4 = set4.value;
+
   if (
-    digitsSet1 === "" ||
-    digitsSet2 === "" ||
-    digitsSet3 === "" ||
-    digitsSet4 === ""
+    +digitsSet1.length < 4 ||
+    +digitsSet2.length < 4 ||
+    +digitsSet3.length < 4 ||
+    +digitsSet4.length < 4
   ) {
     alert(
-      "Por favor introduzca bien todos los dígitos de su tarjeta de crédito"
+      "Por favor introduzca correctamente todos los dígitos de su tarjeta de crédito"
     );
     set1.focus();
   } else {
@@ -150,25 +152,46 @@ buttonVerify.addEventListener("click", function () {
     console.log(strCardNumber);
 
     const creditCardValid = validator.isValid(strCardNumber);
-    const msg = creditCardValid ? "valido" : "invalido";
-    alert(`Numero de tarjeta ${msg}`);
-
-    const masky = validator.maskify(strCardNumber);
-    set1.value = masky.substring(0, 4);
-    set2.value = masky.substring(4, 8);
-    set3.value = masky.substring(8, 12);
-    set4.value = masky.substring(12);
+    // const msg = creditCardValid ? "valido" : "invalido";
+    // alert(`Numero de tarjeta ${msg}`);
 
     if (creditCardValid) {
+      msg = "válido";
+      const masky = validator.maskify(strCardNumber);
+      set1.value = masky.substring(0, 4);
+      set2.value = masky.substring(4, 8);
+      set3.value = masky.substring(8, 12);
+      set4.value = masky.substring(12);
       const donorName = name.value;
       alert(
         `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
       );
+    } else {
+      msg = "no válido";
+      set1.value = "";
+      set2.value = "";
+      set3.value = "";
+      set4.value = "";
     }
+
+    alert(`Numero de tarjeta ${msg}`);
+
+    // const masky = validator.maskify(strCardNumber);
+    // set1.value = masky.substring(0, 4);
+    // set2.value = masky.substring(4, 8);
+    // set3.value = masky.substring(8, 12);
+    // set4.value = masky.substring(12);
+
+    // if (creditCardValid) {
+    //   const donorName = name.value;
+    //   alert(
+    //     `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
+    //   );
+    // }
   }
 });
 
-const numTest2 = "3625102593804";
-console.log(validator.isValid(numTest2));
+// const numTest2 = "3625102593804";
+// console.log(validator.isValid(numTest2));
 
 console.log(validator);
