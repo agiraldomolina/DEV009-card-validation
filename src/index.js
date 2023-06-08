@@ -38,19 +38,15 @@ onceDonation.addEventListener("click", function () {
 //Reading donation amount
 donate5.addEventListener("click", function () {
   amountDonated = 5;
-  console.log(`cantidad donada: ${amountDonated}`);
 });
 donate10.addEventListener("click", function () {
   amountDonated = 10;
-  console.log(`cantidad donada: ${amountDonated}`);
 });
 donate20.addEventListener("click", function () {
   amountDonated = 20;
-  console.log(`cantidad donada: ${amountDonated}`);
 });
 donateDiffAmunt.addEventListener("click", function () {
   amountDonated = prompt("Ingrese la cantidad que quiere donar");
-  console.log(`cantidad donada: ${amountDonated}`);
 });
 
 // function that verify that user press only digits
@@ -95,8 +91,6 @@ set4.addEventListener("keypress", function (e) {
 month.addEventListener("keypress", function (e) {
   if (onlyDigits(e) === false) {
     e.preventDefault();
-  } else {
-    console.log(month.value);
   }
   //when month digits are complete cursor moves to the next filed
   if (month.value.length === 2) {
@@ -106,7 +100,6 @@ month.addEventListener("keypress", function (e) {
 
 //Verifyin values for month, year and CCV
 year.addEventListener("focus", function () {
-  console.log(month.value);
   if (+month.value === 0 || +month.value > 12) {
     alert(`${month.value} no es un número de mes válido`);
     month.value = "";
@@ -162,7 +155,6 @@ buttonVerify.addEventListener("click", function () {
   else {
     // Cancatenating the sets
     const strCardNumber = `${digitsSet1}${digitsSet2}${digitsSet3}${digitsSet4}`;
-    console.log(strCardNumber);
 
     // calling method isValid
     const creditCardValid = validator.isValid(strCardNumber);
@@ -197,5 +189,3 @@ buttonVerify.addEventListener("click", function () {
     alert(`Numero de tarjeta ${msg}`);
   }
 });
-
-console.log(validator);
