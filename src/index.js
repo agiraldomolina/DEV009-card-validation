@@ -170,11 +170,28 @@ buttonVerify.addEventListener("click", function () {
       set2.value = masky.substring(4, 8);
       set3.value = masky.substring(8, 12);
       set4.value = masky.substring(12);
+
+      const cardKind = +strCardNumber.slice(0, 1);
+      let franq;
+      console.log(cardKind);
+      console.log(typeof cardKind);
+      switch (cardKind) {
+        case 4:
+          franq = "Visa";
+          console.log(franq);
+        case 5:
+          const masterDigits = +strCardNumber.slice(0, 2);
+          if (masterDigits > 50 && masterDigits < 56) {
+            franq = "Master Card";
+          }
+          console.log(franq);
+      }
+
       // declating variable with the donor name
       const donorName = name.value;
       //display a gratitude message
       alert(
-        `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
+        `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$, lo cargaremos a tu tarjeta ${franq}`
       );
       // if credit card is not a  valid number:
     } else {
