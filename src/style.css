@@ -8,21 +8,20 @@
 }
 
 :root {
-  --clr-white: hsl(0, 0%, 100%);
-  --clr-ligth-gray: hsl(270, 3%, 87%);
-  --clr-dark-gray: hsl(279, 6%, 55%);
-  --clr-dark-violet: hsl(278, 68%, 11%);
+  --clr-background: #1e434c;
+  --clr-fonts: #c99e10;
 }
 
 body {
-  background-color: #c99e10;
+  background-color: var(--clr-background);
 }
 
 main {
   margin: 20px;
-  background-color: #c99e10;
+  background-color: var(--clr-background);
   /*border: 1px solid red;*/
-  color: #1e434c;
+  color: var(--clr-fonts);
+  font-weight: 400;
 }
 
 .wrapper-context {
@@ -41,12 +40,13 @@ label {
 }
 
 h1 {
-  color: #1e434c;
+  color: var(--clr-fonts);
+  font-weight: 900;
 }
 
 .wrapper-context__tittle {
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -64,7 +64,7 @@ h1 {
   height: 200px;
   grid-template-rows: 1.5fr 2fr 0.25fr 0.25fr;
   border: 1px solid #fff;
-  border-color: gray;
+  border-color: var(--clr-fonts);
   border-radius: 30px;
   margin: 5px auto;
   /*background-color: var(--clr-dark-violet);*/
@@ -77,7 +77,7 @@ h1 {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: rgb(253, 253, 254);
+  background-color: var(--clr-background);
   justify-content: last baseline;
 }
 
@@ -89,23 +89,27 @@ h1 {
 }
 
 #set1 {
+  color: #c99e10;
   position: absolute;
   bottom: 20px;
   left: 50px;
 }
 
 #set2 {
+  color: #c99e10;
   position: absolute;
   bottom: 20px;
   left: 160px;
 }
 
 #set3 {
+  color: #c99e10;
   position: absolute;
   bottom: 20px;
   left: 270px;
 }
 #set4 {
+  color: #c99e10;
   position: absolute;
   bottom: 20px;
   left: 380px;
@@ -128,16 +132,15 @@ h1 {
 #input-set2,
 #input-set3,
 #input-set4 {
-  background-color: #c99e10;
+  background-color: var(--clr-background);
+  color: #c99e10;
 }
 
-#month {
-  text-align: right;
-  border: none;
-}
-#year {
-  text-align: left;
-  border: none;
+#input-name,
+#input-month,
+#input-year,
+#input-cvc {
+  border: 1px solid lightgray;
 }
 
 .wrapper-credit-card__name {
@@ -163,10 +166,10 @@ h1 {
   width: 600px;
   height: 300px;
   grid-template-rows: 1.5fr 0.5fr 1fr;
-  border-color: gray;
+  border-color: var(--clr-fonts);
   border-radius: 30px;
   margin: 120px auto;
-  background-color: var(--clr-dark-violet);
+  background-color: var(--clr-background);
 }
 .containerButton {
   display: flex;
@@ -174,14 +177,14 @@ h1 {
 }
 
 .button-verify {
-  background-color: #1e434c;
-  color: #fff;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: #8d230f;
+  color: var(--clr-fonts);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
   font-size: 2rem;
   padding-block: 0.75rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .numGridMask {
@@ -299,22 +302,24 @@ form {
   border: 1px solid var(--clr-ligth-gray);
   padding: 0.75rem;
   border-radius: 0.5rem;
+  color: #c99e10;
 }
 
 .input::placeholder {
-  color: var(--clr-ligth-gray);
+  color: var(--clr-fonts);
+  font-weight: 100;
 }
 
 .label {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 1px;
-  color: var(--clr-dark-violet);
+  color: var(--clr-fonts);
   margin-bottom: 0.25rem;
 }
 
 .button-confirm {
-  background-color: var(--clr-dark-violet);
+  background-color: var(--clr-background);
   color: var(--clr-white);
   font-size: 1rem;
   padding-block: 0.75rem;
@@ -328,7 +333,7 @@ form {
 }
 
 .boton {
-  background-color: var(--clr-dark-violet);
+  background-color: var(--clr-background);
   color: var(--clr-white);
   font-size: 1rem;
   padding-block: 0.75rem;
