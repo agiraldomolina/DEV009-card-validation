@@ -70,9 +70,6 @@ h1 {
   /*background-color: var(--clr-dark-violet);*/
 }
 
-.wrapper-credit-card__logo {
-  /**/
-}
 .wrapper-credit-card__numSpaces {
   position: relative;
   display: grid;

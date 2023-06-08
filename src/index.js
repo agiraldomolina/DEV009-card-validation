@@ -171,20 +171,17 @@ buttonVerify.addEventListener("click", function () {
       set3.value = masky.substring(8, 12);
       set4.value = masky.substring(12);
 
+      //Verifying credit card franchise
       const cardKind = +strCardNumber.slice(0, 1);
       let franq;
-      console.log(cardKind);
-      console.log(typeof cardKind);
-      switch (cardKind) {
-        case 4:
-          franq = "Visa";
-          console.log(franq);
-        case 5:
-          const masterDigits = +strCardNumber.slice(0, 2);
-          if (masterDigits > 50 && masterDigits < 56) {
-            franq = "Master Card";
-          }
-          console.log(franq);
+      let masterDigits;
+
+      if (cardKind === 4) {
+        franq = "Visa";
+      } else {
+        if (masterDigits > 50 && masterDigits < 56) {
+          franq = "Master Card";
+        }
       }
 
       // declating variable with the donor name
