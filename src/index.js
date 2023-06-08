@@ -143,7 +143,7 @@ buttonVerify.addEventListener("click", function () {
     +digitsSet4.length < 4
   ) {
     alert(
-      "Por favor introduzca correctamente todos los dígitos de su tarjeta de crédito"
+      "Por favor introduzca correctamente todos los dígitos de su tarjeta de crédito 😿"
     );
     set1.focus();
   } else {
