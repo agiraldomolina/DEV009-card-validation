@@ -1,9 +1,10 @@
 import validator from "./validator.js";
 
-const set1 = document.querySelector("#set1");
-const set2 = document.querySelector("#set2");
-const set3 = document.querySelector("#set3");
-const set4 = document.querySelector("#set4");
+const set1 = document.querySelector("#input-set1");
+const set2 = document.querySelector("#input-set2");
+const set3 = document.querySelector("#input-set3");
+const set4 = document.querySelector("#input-set4");
+console.log(set1);
 
 const monthlyDonation = document.querySelector("#monthly-donation");
 const onceDonation = document.querySelector("#once-donation");

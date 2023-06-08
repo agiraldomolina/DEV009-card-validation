@@ -55,8 +55,7 @@
         Otra cantidad<br />
       </div>
 
-      <!--
-        <div class="wrapper-type2">
+      <div class="wrapper-type2">
         <h2>Datos de facturación</h2>
         <form class="form" id="form">
           <div class="form-group">
@@ -67,17 +66,6 @@
               class="input"
               id="input-name"
               placeholder="e.g. Alba Giraldo"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="input-number" class="label">Card Number</label>
-            <input
-              type="text"
-              name=""
-              class="input"
-              id="input-number"
-              placeholder="e.g. 1234 5678 9123 0000"
             />
           </div>
 
@@ -112,11 +100,62 @@
               />
             </div>
           </div>
+
+          <div class="rows">
+              <label for="input-month" class="label">Card Number</label>
+              <div class="columns-number-sets">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="1234"
+                  class="digits"
+                  id="input-set1"
+                  maxlength="4"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="1234"
+                  class="digits"
+                  id="input-set2"
+                  maxlength="4"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="1234"
+                  class="digits"
+                  id="input-set3"
+                  maxlength="4"
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="1234"
+                  class="digits"
+                  id="input-set4"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+            
+
+            <!--<input
+              type="text"
+              name=""
+              class="input"
+              id="input-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />-->
+            
+          </div>
+
+          
         </form>
       </div>
-      -->
 
-      <div class="wrapper-credit-card">
+
+      <!--<div class="wrapper-credit-card">
         <div class="card2">
           <div class="wrapper-credit-card__logo"></div>
           <div class="wrapper-credit-card__numSpaces">
@@ -158,17 +197,23 @@
           <form class="wrapper-credit-card__date">
             <div class="wrapper-credit-card__date__text">VALID THRU</div>
             <div class="wrapper-credit-card__date__month">
-              <input type="text" maxlength="2" id="month" placeholder="00" />
+              <input type="text" maxlength="2" id="month" placeholder="MM" />
               <span>/</span>
-              <input type="text" maxlength="2" id="year" placeholder="00" />
+              <input type="text" maxlength="2" id="year" placeholder="YY" />
             </div>
           </form>
-
-          <div
-            class="wrapper-credit-card__name"
-            aria-placeholder="Pepito Pérez"
-          ></div>
-        </div>
+          <div class="wrapper-credit-card__name">
+            <form>
+              <input
+                type="text"
+                class="name"
+                id="name"
+                placeholder="Pepito Pérez"
+              />
+            </form>
+          </div>
+        </div>-->
+      
         <div class="containerButton">
           <button class="button-verify">Verificar</button>
         </div>
