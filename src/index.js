@@ -156,26 +156,37 @@ buttonVerify.addEventListener("click", function () {
   const digitsSet2 = set2.value;
   const digitsSet3 = set3.value;
   const digitsSet4 = set4.value;
-
-  // Cancatenating the sets
-  const strCardNumber = `${digitsSet1}${digitsSet2}${digitsSet3}${digitsSet4}`;
-  console.log(strCardNumber);
-
-  const creditCardValid = validator.isValid(strCardNumber);
-  const msg = creditCardValid ? "valido" : "invalido";
-  alert(`Numero de tarjeta ${msg}`);
-
-  const masky = validator.maskify(strCardNumber);
-  set1.value = masky.substring(0, 4);
-  set2.value = masky.substring(4, 8);
-  set3.value = masky.substring(8, 12);
-  set4.value = masky.substring(12);
-
-  if (creditCardValid) {
-    let donorName = name.value;
+  if (
+    digitsSet1 === "" ||
+    digitsSet2 === "" ||
+    digitsSet3 === "" ||
+    digitsSet4 === ""
+  ) {
     alert(
-      `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
+      "Por favor introduzca bien todos los dígitos de su tarjeta de crédito"
     );
+    set1.focus();
+  } else {
+    // Cancatenating the sets
+    const strCardNumber = `${digitsSet1}${digitsSet2}${digitsSet3}${digitsSet4}`;
+    console.log(strCardNumber);
+
+    const creditCardValid = validator.isValid(strCardNumber);
+    const msg = creditCardValid ? "valido" : "invalido";
+    alert(`Numero de tarjeta ${msg}`);
+
+    const masky = validator.maskify(strCardNumber);
+    set1.value = masky.substring(0, 4);
+    set2.value = masky.substring(4, 8);
+    set3.value = masky.substring(8, 12);
+    set4.value = masky.substring(12);
+
+    if (creditCardValid) {
+      let donorName = name.value;
+      alert(
+        `😽😻 ${donorName} muchas gracias por hacer tu donación ${donationKind} por un valor de ${amountDonated}$`
+      );
+    }
   }
 });
 
