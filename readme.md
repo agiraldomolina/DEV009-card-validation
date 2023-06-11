@@ -8,11 +8,33 @@
 
 ## 1. Presentación
 
-Esta página fue el primer proyecto construído dentro del bootcamp de Laboratoria cohort 009. El bjetivo principal es realizar la verificación de una tarjeta de crédito y en caso de que la tarjeta sea válida enmascar sus dígitos menos los cuatro últimos.
+Esta página fue el primer proyecto construído dentro del bootcamp de Laboratoria cohort 009. El bjetivo principal es realizar la verificación de una tarjeta de crédito (utilizando el algoritmo de Luhn) y en caso de que la tarjeta sea válida enmascar sus dígitos menos los cuatro últimos.
+
+Como parte del proyecto se debe crear un contexto dentro del cual sería necesario y útil contar con una funcionalidad como ésta, es decir validar un medio de pago.
+
+## 2. Flujo de Trabajo.
+
+### 2.1 Diseño de prototipo de baja fidelidad
+
+Para crear una experiencia de usuario inmersiva, la validación de la tarjeta está creada como parte de una página en la cual se pueden hacer donaciones para una fundación sin ánimo de lucro dedicada a cuidar gatitos.
+
+Utilizando Figma se diseñó un prototipo de baja fidelidad, que permite visualizar un posible layout básico de la futura UI:
+
+![Alt text](<src/images/Prototipo de baja fidelidad.jpg>)
+
+### 2.2 UI inicial y Codificación de métodos principales.
+
+Depués de tener el prototipo de baja fidelidad pempecé a escribir código en HTML y CSS para diseñar solo la parte en la cual el usuario debe digitar, en este caso, los 16 dígitos de la tarjera de crédito.
+
+Hice esto como primer paso de codificación pues consideré que el pricipal cuello de botella lo podría encontrar en la implementación del algoritmo de Luhn y el posterior enmascarado de los números.
+
+La primera UI que permitía solo el ingreso de los 16 dígitos de la tarjeta de crédito se veía así:
+
+![Alt text](src/images/firstUI.png)
 
 ## 2. Contexto
 
-Para crear una experiencia de usuario inmersiva, la validación de la tarjeta está creada como parte de una página en la cual se pueden hacer donaciones para una fundación sin ánimo de lucro dedicada a cuidar gatitos:
+:
 
 ![Alt text](interfaz-ppl.png)
 
