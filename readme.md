@@ -26,7 +26,7 @@ Utilizando Figma se diseñó un prototipo de baja fidelidad, que permite visuali
 
 Depués de tener el prototipo de baja fidelidad procedí a escribir código en HTML y CSS para diseñar solo la parte en la cual el usuario debe digitar, en este caso, los 16 dígitos de la tarjera de crédito.
 
-Hice esto como primer etapa entro del flujo de trabajo pues consideré que el principal cuello de botella lo podría encontrar en la implementación del algoritmo de Luhn y el posterior enmascarado de los números y pasar los test.
+Hice esto como primer etapa dentro del flujo de trabajo pues consideré que el principal cuello de botella lo podría encontrar en la implementación del algoritmo de Luhn y el posterior enmascarado de los números y pasar los test.
 
 La primera UI que permitía solo el ingreso de los 16 dígitos de la tarjeta de crédito se veía así:
 
@@ -82,6 +82,6 @@ Si todo sale correctamente la página le muestra un mensaje agradecimiento perso
 
 ## 3. Usuarios potenciales de la palicación.
 
-Este tipo de aplicación le puede resultar muy útil a cualquier tipo de oraganización que necesite recaudar fondos a partir de donaciones.
+Este tipo de aplicación le puede resultar muy útil a cualquier tipo de organización que necesite recaudar fondos a partir de donaciones.
 
 Esta aplicación en particular ofrece una buena experiencia de usuario ya despliega una interfaz de fácil interacción y a prueba de los errores típicos.
