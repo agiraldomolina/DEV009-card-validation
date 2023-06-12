@@ -4,7 +4,7 @@
 
 - [1. Presentació del producto](#1-presentacion)
 - [2. Flujo de Trabajo.](#2-flujo-de-trabajo)
-- [3. Usuarios potenciales de la palicación](#3-usuarios-potenciales)
+- [3. Usuarios potenciales de la palicación](#3-usuarios-potenciales-de-la-aplicacion)
 
 ## 1. Presentación
 
@@ -80,7 +80,7 @@ Si todo sale correctamente la página le muestra un mensaje agradecimiento perso
 
 ![Alt text](thanksAlert-1.png)
 
-## 3. Usuarios potenciales de la palicación.
+## 3. Usuarios potenciales de la aplicación.
 
 Este tipo de aplicación le puede resultar muy útil a cualquier tipo de organización que necesite recaudar fondos a partir de donaciones.
 
